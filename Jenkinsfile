@@ -14,7 +14,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm cache clean --force
+                    chown -R $USER:$GROUP ~/.npm
                     npm ci
                     npm run build
                     ls -la
