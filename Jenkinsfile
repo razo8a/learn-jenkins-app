@@ -14,7 +14,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    chown -R $USER:$GROUP ~/.npm
+                    chown -R $(whoami):$(whoami) ~/.npm
                     npm ci
                     npm run build
                     ls -la
