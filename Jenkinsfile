@@ -7,6 +7,7 @@ pipeline {
                 docker {
                     image 'node:18-alpine'
                     reuseNode true
+                    args '-u root' // Run the container as root
                 }
             }
             steps {
@@ -14,10 +15,8 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    id jenkins
-                    npm cache clean --force
                     npm ci
-                    # npm run build
+                    npm run build
                     ls -la
                 '''
             }
