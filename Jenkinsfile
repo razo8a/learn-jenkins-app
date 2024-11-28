@@ -14,9 +14,10 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    chown -R $(whoami):$(whoami) ~/.npm
+                    whoami
+                    npm cache clean --force
                     npm ci
-                    npm run build
+                    # npm run build
                     ls -la
                 '''
             }
