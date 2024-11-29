@@ -31,6 +31,7 @@ pipeline {
                 sh '''
                     echo "Test stage"
                     test -f $INDEX_FILE_NAME
+                    npm test
                 '''
             }
         }
