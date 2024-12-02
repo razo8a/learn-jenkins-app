@@ -48,6 +48,7 @@ pipeline {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.49.0-noble'
                     reuseNode true
+                    args '-u root'
                 }
             }
             steps {
